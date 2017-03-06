@@ -24,17 +24,17 @@
 
 <div class="container text-center">
 <div class="row">
-    <div class="col-md-4 col-md-offset-2">
+    <div class="col-md-2 col-md-offset-4">
         <h3>Break length</h3>
-        <button class="btn btn-lg btn-default id="plusSession"">+</button>
-        <input type="text" class="text-center" value="5" />
-        <button class="btn btn-lg btn-default id="minusSession"">-</button>
+        <button class="btn btn-lg btn-default pull-left" id="plusBreak">+</button>
+        <button class="btn btn-lg btn-default pull-right" id="minusBreak">-</button>
+        <h2 id="break-length">5</h2>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-2">
         <h3>Session length</h3>
-        <button class="btn btn-lg btn-default">+</button>
-        <input type="text" class="text-center" value="25" />
-        <button class="btn btn-lg btn-default">-</button>
+        <button class="btn btn-lg btn-default pull-left" id="plusSession">+</button>
+        <button class="btn btn-lg btn-default pull-right" id="minusSession">-</button>
+        <h2 id=session-length>25</h2>
     </div>
 </div>
 </div>
@@ -43,7 +43,7 @@
       <div class="col-md-10 col-md-offset-1">
         <div class="counter center-block">
         <p class="counter-header text-center">Session</p>
-        <p class="counter-timer text-center">25</p>
+        <p class="counter-timer text-center" id=counter-timer>25</p>
       </div>
     </div>
 </div>
