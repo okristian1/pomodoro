@@ -32,8 +32,8 @@
     </div>
     <div class="col-md-2">
         <h3>Session length</h3>
-        <button class="btn btn-lg btn-default pull-left" id="plusSession">+</button>
-        <button class="btn btn-lg btn-default pull-right" id="minusSession">-</button>
+        <button class="btn btn-lg btn-default pull-left" onClick=plusSessionTime() id="plusSession">+</button>
+        <button class="btn btn-lg btn-default pull-right" onClick=minusSessionTime() id="minusSession">-</button>
         <h2 id=session-length>25</h2>
     </div>
 </div>
@@ -41,9 +41,11 @@
 
 <div class="container">
       <div class="col-md-10 col-md-offset-1">
-        <div class="counter center-block">
+        <div class="counter center-block")>
         <p class="counter-header text-center">Session</p>
-        <p class="counter-timer text-center" id=counter-timer>25</p>
+        <p class="counter-timer text-center" id=counter-timer>
+          <span class="minute"></span> : <span class="second"></span>
+        </p>
       </div>
     </div>
 </div>
