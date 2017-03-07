@@ -10,7 +10,6 @@ var minuteSpan = document.getElementById('.minute');
 var secondSpan = document.getElementById('.second');
 
 
-var deadline = new Date(Date.parse(new Date()) + sessionLength.innerHTML*60*1000);
 
 
 function plusSessionTime() {
@@ -69,16 +68,14 @@ function initializeClock(id, endtime) {
       clearInterval(timeinterval);
   }
 }
-//uptede clock once to avoid delay.
+//update clock to avoid delay.
 updateClock();
 //start timer
 var timeinterval = setInterval(updateClock,1000);
 }
 window.onload = function(){
     document.getElementById("counter").onclick=function(){
-alert("Hello WOrld");
-
-}
-}
-
-//initializeClock('counter-timer', deadline);
+      var deadline = new Date(Date.parse(new Date()) + sessionLength.innerHTML*60*1000);
+      initializeClock('counter-timer', deadline);
+    }
+  }
