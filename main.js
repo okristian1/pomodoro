@@ -74,5 +74,11 @@ updateClock();
 //start timer
 var timeinterval = setInterval(updateClock,1000);
 }
+window.onload = function(){
+    document.getElementById("counter").onclick=function(){
+alert("Hello WOrld");
 
-initializeClock('counter-timer', deadline);
+}
+}
+
+//initializeClock('counter-timer', deadline);

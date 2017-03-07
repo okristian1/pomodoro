@@ -8,15 +8,16 @@ body {
 }
 
 .counter {
-	width: 400px;
-	height: 400px;
+	width: 25rem;
+	height: 25rem;
 	border: 3px solid black;
 	border-radius: 100%;
-	margin-top: 100px;
+	margin-top: 10%;
+	margin-bottom: 100px;
 }
 
 .counter-header {
-	margin-top: 35%;
+	margin-top: 20%;
 }
 
 .counter-timer, p .counter-header, p{
