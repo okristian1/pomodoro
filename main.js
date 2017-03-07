@@ -12,8 +12,9 @@ var minuteSpan = document.getElementById('.minute');
 var secondSpan = document.getElementById('.second');
 
 var counterHeader = document.querySelector('#counter-header');
-var relax = false;
 
+var relax = false;
+var running = false;
 
 plusSession.onclick = function plusSessionTime() {
   var val = sessionLength.innerHTML;
@@ -98,7 +99,10 @@ var timeinterval = setInterval(updateClock,1000);
 }
 window.onload = function(){
     document.getElementById("counter").onclick=function(){
+      if(!running) {
       var deadline = new Date(Date.parse(new Date()) + sessionLength.innerHTML*60*1000);
       initializeClock('counter-timer', deadline);
+      running = true;
+    }
     }
   }
