@@ -12,7 +12,7 @@ var minuteSpan = document.querySelector('.minute');
 var secondSpan = document.querySelector('.second');
 
 var counterHeader = document.querySelector('#counter-header');
-
+var resetTimer = document.querySelector('.resetTimer');
 
 var relax = false;
 var running = false;
@@ -59,10 +59,21 @@ function addZero(i) {
   return i;
 }
 
+
 function initializeClock(id, endtime) {
   var clock = document.getElementById(id);
   var minuteSpan = clock.querySelector('.minute');
   var secondSpan = clock.querySelector('.second');
+  var timeinterval = setInterval(updateClock,1000);
+
+  resetTimer.onclick = function reset() {
+    var deadline = new Date(Date.parse(new Date()) + sessionLength.innerHTML*60*1000);
+    minuteSpan.innerHTML = sessionLength.innerHTML;
+    secondSpan.innerHTML = '00';
+    clearInterval(timeinterval);
+    running = false;
+    }
+
 
   function updateClock() {
     var t = getTimeRemaining(endtime);
@@ -89,11 +100,6 @@ function initializeClock(id, endtime) {
   }
 }
 
-
-//update clock to avoid delay.
-updateClock();
-//start timer
-var timeinterval = setInterval(updateClock,1000);
 }
 window.onload = function(){
     document.getElementById("counter").onclick=function(){
@@ -101,10 +107,6 @@ window.onload = function(){
         var deadline = new Date(Date.parse(new Date()) + sessionLength.innerHTML*60*1000);
         initializeClock('counter-timer', deadline);
         running = true;
-      } else {
-        running = false;
-        clearInterval(timeinterval);
-
       }
     }
   }
