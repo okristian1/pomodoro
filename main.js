@@ -8,8 +8,8 @@ var minusBreak = document.querySelector('#minusBreak');
 
 var breakLength = document.querySelector('#break-length');
 var clock = document.getElementById('.counter-timer');
-var minuteSpan = document.getElementById('.minute');
-var secondSpan = document.getElementById('.second');
+var minuteSpan = document.querySelector('.minute');
+var secondSpan = document.querySelector('.second');
 
 var counterHeader = document.querySelector('#counter-header');
 
@@ -20,11 +20,13 @@ var running = false;
 plusSession.onclick = function plusSessionTime() {
   if(!running) {
     sessionLength.innerHTML++;
+    minuteSpan.innerHTML++;
   }
 }
 minusSession.onclick = function minusSessionTime() {
   if(!running) {
     sessionLength.innerHTML--;
+    minuteSpan.innerHTML--;
   }
 }
 plusBreak.onclick = function plusBreakTime() {
@@ -99,6 +101,10 @@ window.onload = function(){
         var deadline = new Date(Date.parse(new Date()) + sessionLength.innerHTML*60*1000);
         initializeClock('counter-timer', deadline);
         running = true;
+      } else {
+        running = false;
+        clearInterval(timeinterval);
+
       }
     }
   }
