@@ -2,9 +2,9 @@ var plusSession = document.querySelector('#plusSession');
 var minusSession = document.querySelector('#minusSession');
 var sessionTime = document.querySelector('#counter-timer');
 var sessionLength = document.querySelector('#session-length');
-
 var plusBreak = document.querySelector('#plusBreak');
 var minusBreak = document.querySelector('#minusBreak');
+
 
 var breakLength = document.querySelector('#break-length');
 var clock = document.getElementById('.counter-timer');
@@ -13,31 +13,29 @@ var secondSpan = document.getElementById('.second');
 
 var counterHeader = document.querySelector('#counter-header');
 
+
 var relax = false;
 var running = false;
 
 plusSession.onclick = function plusSessionTime() {
-  var val = sessionLength.innerHTML;
-  val++;
-  sessionLength.innerHTML = val;
+  if(!running) {
+    sessionLength.innerHTML++;
+  }
 }
-
 minusSession.onclick = function minusSessionTime() {
-  var val = sessionLength.innerHTML;
-  val--;
-  sessionLength.innerHTML = val;
+  if(!running) {
+    sessionLength.innerHTML--;
+  }
 }
-
 plusBreak.onclick = function plusBreakTime() {
-  var val = breakLength.innerHTML;
-  val ++;
-  breakLength.innerHTML = val;
+  if(!running) {
+    breakLength.innerHTML++;
+  }
 }
-
 minusBreak.onclick = function minusBreakTime() {
-  var val = breakLength.innerHTML;
-  val--;
-  breakLength.innerHTML = val;
+  if(!running) {
+    breakLength.innerHTML--;
+  }
 }
 
 // Make clock
@@ -45,12 +43,8 @@ function getTimeRemaining(endtime) {
   var t = Date.parse(endtime) - Date.parse(new Date());
   var seconds = Math.floor( (t/1000) % 60 );
   var minutes = Math.floor ( (t/1000/60) % 60 );
-  var hours = Math.floor ( (t/(1000*60*60)) % 24 );
-  var days = Math.floor ( t/(1000*60*60*24) );
   return {
     'total': t,
-    'days': days,
-    'hours': hours,
     'minutes': minutes,
     'seconds': seconds
   };
@@ -92,6 +86,8 @@ function initializeClock(id, endtime) {
     }
   }
 }
+
+
 //update clock to avoid delay.
 updateClock();
 //start timer
@@ -100,9 +96,9 @@ var timeinterval = setInterval(updateClock,1000);
 window.onload = function(){
     document.getElementById("counter").onclick=function(){
       if(!running) {
-      var deadline = new Date(Date.parse(new Date()) + sessionLength.innerHTML*60*1000);
-      initializeClock('counter-timer', deadline);
-      running = true;
-    }
+        var deadline = new Date(Date.parse(new Date()) + sessionLength.innerHTML*60*1000);
+        initializeClock('counter-timer', deadline);
+        running = true;
+      }
     }
   }
