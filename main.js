@@ -61,27 +61,12 @@ function addZero(i) {
   return i;
 }
 
-function animate() {
-  var elem = animation;
-  var pos = 0;
-  var id = setInterval(frame, 10);
-  function frame() {
-    if (pos == 350) {
-      clearInterval(id);
-    } else {
-      pos++;
-      elem.style.top = pos + 'px';
-    }
-  }
-}
-
 
 function initializeClock(id, endtime) {
   var clock = document.getElementById(id);
   var minuteSpan = clock.querySelector('.minute');
   var secondSpan = clock.querySelector('.second');
   var timeinterval = setInterval(updateClock,1000);
-  animate();
 
   resetTimer.onclick = function reset() {
     var deadline = new Date(Date.parse(new Date()) + sessionLength.innerHTML*60*1000);
@@ -124,6 +109,7 @@ window.onload = function(){
         var deadline = new Date(Date.parse(new Date()) + sessionLength.innerHTML*60*1000);
         initializeClock('counter-timer', deadline);
         running = true;
+        $('.animate').animate({ margin: '0px' }, {duration: sessionLength.innerHTML*60*1000, easing: 'linear'});
       }
     }
   }
