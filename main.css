@@ -7,8 +7,8 @@ body {
 }
 
 .counter {
-	width: 30rem;
-	height: 30rem;
+	width: 25rem;
+	height: 25rem;
 	border: 3px solid black;
 	border-radius: 100%;
 	margin-top: 10%;
@@ -16,6 +16,28 @@ body {
 	overflow: hidden;
 	position: relative;
 }
+
+.counter:hover .hover {
+	height: 100%;
+}
+
+.hover {
+		color: red;
+    position: absolute;
+    width:100%;
+    top:0; /*Change 'top' to 'bottom' for an upwards transition*/
+    height:0px;
+    margin:0 auto;
+    padding:0px;
+    background-color: #39afc9;
+    -webkit-transition: .2s ease;
+    -moz-transition: .2s ease;
+    -o-transition: .2s ease;
+    -ms-transition: .2s ease;
+    transition: .2s ease;
+}
+
+
 
 .counter-header {
 	margin-top: 20%;
