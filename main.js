@@ -28,7 +28,7 @@ plusSession.onclick = function plusSessionTime() {
   }
 }
 minusSession.onclick = function minusSessionTime() {
-  if(!running) {
+  if(!running && minuteSpan.innerHTML > 1) {
     sessionLength.innerHTML--;
     minuteSpan.innerHTML--;
   }
@@ -39,7 +39,7 @@ plusBreak.onclick = function plusBreakTime() {
   }
 }
 minusBreak.onclick = function minusBreakTime() {
-  if(!running) {
+  if(!running && breakLength.innerHTML >1) {
     breakLength.innerHTML--;
   }
 }
