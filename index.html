@@ -18,44 +18,40 @@
 
 <header>
   <div class="container-fluid text-center">
-    <h1>FreeCodeCamp Pomodoro Clock</h1>
+    <h1>Free Code Camp Pomodoro Clock</h1>
   </div>
 </header>
 
-<div class="container text-center">
-<div class="row">
-  <hr />
-    <div class="col-md-2 col-md-offset-4">
-        <h3>Session length</h3>
-        <button class="btn btn-lg btn-default pull-right"  id="plusSession">+</button>
-        <button class="btn btn-lg btn-default pull-left" id="minusSession">-</button>
-        <h2 id=session-length>2</h2>
-    </div>
-    <div class="col-md-2">
-        <h3>Break length</h3>
-        <button class="btn btn-lg btn-default pull-right" id="plusBreak">+</button>
-        <button class="btn btn-lg btn-default pull-left" id="minusBreak">-</button>
-        <h2 id="break-length">1</h2>
-    </div>
+<div class="container-fluid text-center settings">
+<div class="col-sm-2 col-sm-offset-4">
+  <h3>Session length</h3>
+  <br />
+    <button class="btn-settings pull-right"  id="plusSession">+</button>
+    <button class="btn-settings pull-left" id="minusSession">-</button>
+  <h2 id=session-length>2</h2>
+<br />
+  <h3>Break length</h3>
+  <br />
+    <button class="btn-settings pull-right" id="plusBreak">+</button>
+    <button class="btn-settings pull-left" id="minusBreak">-</button>
+  <h2 id="break-length">1</h2>
+  <br />
 </div>
-<hr />
-<button class="btn btn-default start">Start</button>
-<button class="btn btn-default resetTimer">Reset</button>
-</div>
-
-<div class="container">
-      <div class="col-md-10 col-md-offset-1">
-        <div class="counter center-block" id="counter">
-          <p class="counter-header text-center" id="counter-header">Session</p>
-          <p class="counter-timer text-center" id=counter-timer>
-          <span class="minute">2</span> : <span class="second">00</span>
-          <br />
-        </p>
-        <div class="animate">
-        </div>
+<div class="col-sm-6">
+  <div class="counter center-block" id="counter">
+    <p class="counter-header text-center" id="counter-header">Session</p>
+    <p class="counter-timer text-center" id=counter-timer>
+    <span class="minute">2</span> : <span class="second">00</span>
+    <br />
+  </p>
+  <div class="animate">
+  </div>
       </div>
+      <button class="btn-bottom start">Start</button>
+      <button class="btn-bottom resetTimer">Reset</button>
     </div>
-</div>
+  </div>
+
 
 <!-- Disabled because doesnt work on github pages anyway
     <script src="main.js" async defer></script>
